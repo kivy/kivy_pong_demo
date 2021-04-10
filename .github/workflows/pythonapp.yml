@@ -67,6 +67,7 @@ jobs:
         python-version: 3.9
     - name: Install dependencies
       run: |
+        pip install pyinstaller
         # use kivy's hook, not the one included in pyinstaller
         python -c "import os, PyInstaller; os.remove(os.path.join(os.path.dirname(PyInstaller.__file__), 'hooks', 'hook-kivy.py'))"
         python -m pip install -e .[dev]
