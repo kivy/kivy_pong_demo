@@ -12,7 +12,7 @@ kwargs['hiddenimports'].extend([
     'plyer.facades.filechooser', 'kivy.core.window.window_info'])
 
 
-a = Analysis(['../kivy_pong_demo/kivy_pong_demo/main.py'],
+a = Analysis(['../kivy_pong_demo/main.py'],
              pathex=['.'],
              datas=kivy_pong_demo.get_pyinstaller_datas(),
              hookspath=hookspath(),
