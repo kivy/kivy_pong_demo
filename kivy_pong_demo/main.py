@@ -1,3 +1,6 @@
+"""Pong Demo App
+=================
+"""
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.properties import (
@@ -8,6 +11,8 @@ from kivy.clock import Clock
 
 
 class PongPaddle(Widget):
+    """The paddle on each side of the screen.
+    """
     score = NumericProperty(0)
     can_bounce = BooleanProperty(True)
 
@@ -24,6 +29,8 @@ class PongPaddle(Widget):
 
 
 class PongBall(Widget):
+    """The pong ball the moves across the screen.
+    """
     velocity_x = NumericProperty(0)
     velocity_y = NumericProperty(0)
     velocity = ReferenceListProperty(velocity_x, velocity_y)
@@ -33,6 +40,8 @@ class PongBall(Widget):
 
 
 class PongGame(Widget):
+    """The pong game canvas.
+    """
     ball = ObjectProperty(None)
     player1 = ObjectProperty(None)
     player2 = ObjectProperty(None)
@@ -68,6 +77,8 @@ class PongGame(Widget):
 
 
 class PongApp(App):
+    """The Pong app.
+    """
 
     def build(self):
         game = PongGame()
@@ -76,10 +87,16 @@ class PongApp(App):
         return game
 
     def clean_up(self):
+        """Closes resources when the app is done.
+
+        Used in testing.
+        """
         pass
 
 
 def run():
+    """Runs the pong app.
+    """
     PongApp().run()
 
 

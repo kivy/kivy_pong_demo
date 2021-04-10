@@ -33,6 +33,7 @@ setup(
                 'trio', 'pytest-trio', 'pyinstaller', 'sphinx',
                 'pytest-kivy~=0.1.0.dev1'],
     },
+    package_data={'kivy_pong_demo': ['*.kv', '**/*.kv']},
     project_urls={
         'Bug Reports': URL + '/issues',
         'Source': URL,
