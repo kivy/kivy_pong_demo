@@ -36,7 +36,9 @@ jobs:
     - name: Install project
       run: python3 -m pip install -e .[dev]
     - name: Make wheel
-      run: python3 setup.py bdist_wheel --universal
+      run: |
+        python3 -m pip install wheel
+        python3 setup.py bdist_wheel --universal
     - name: Upload wheels as artifact
       uses: actions/upload-artifact@v2
       with:
