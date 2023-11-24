@@ -6,9 +6,9 @@ jobs:
   lint_test:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - name: Set up Python 3.9
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Lint with pycodestyle
@@ -21,9 +21,9 @@ jobs:
     env:
       DISPLAY: :99.0
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - name: Set up Python 3.9
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Make sdist
@@ -40,7 +40,7 @@ jobs:
         python3 -m pip install wheel
         python3 setup.py bdist_wheel --universal
     - name: Upload wheels as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: wheels
         path: dist
@@ -60,9 +60,9 @@ jobs:
     env:
       KIVY_GL_BACKEND: angle_sdl2
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - name: Set up Python 3.9
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Install dependencies
@@ -76,7 +76,7 @@ jobs:
         cd packaging
         python -m PyInstaller kivy_pong_demo_exe.spec
     - name: Upload app as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: app
         path: packaging/dist
@@ -95,9 +95,9 @@ jobs:
     runs-on: macos-10.15
     if: github.event_name != 'pull_request'
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Get Kivy dependencies
@@ -139,7 +139,7 @@ jobs:
         mkdir osx_app
         cp ../kivy-sdk-packager/osx/PongDemo.dmg osx_app/
     - name: Upload app as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: osx_app
         path: osx_app
@@ -154,7 +154,7 @@ jobs:
   android_app:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       # used to cache dependencies with a timeout
       - name: Get Date
         id: get-date
@@ -163,12 +163,12 @@ jobs:
         shell: bash
 
       - name: Cache Buildozer global directory
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: .buildozer_global
           key: buildozer-global-${{ hashFiles('packaging/buildozer.spec') }}
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: .buildozer
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
@@ -182,7 +182,7 @@ jobs:
           buildozer_version: master
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: android_app
           path: ${{ steps.buildozer.outputs.filename }}
@@ -198,9 +198,9 @@ jobs:
   docs:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - name: Set up Python 3.9
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Install dependencies
