@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pong Demo &mdash; PongDemo  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PongDemo
+              <img src="_static/kivy_pong_demo_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pong Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#kivy_pong_demo.get_pyinstaller_datas"><code class="docutils literal notranslate"><span class="pre">get_pyinstaller_datas()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#pong-demo-app">Pong Demo App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#kivy_pong_demo.main.PongApp"><code class="docutils literal notranslate"><span class="pre">PongApp</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#kivy_pong_demo.main.PongApp.build"><code class="docutils literal notranslate"><span class="pre">PongApp.build()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kivy_pong_demo.main.PongApp.clean_up"><code class="docutils literal notranslate"><span class="pre">PongApp.clean_up()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#kivy_pong_demo.main.PongBall"><code class="docutils literal notranslate"><span class="pre">PongBall</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#kivy_pong_demo.main.PongGame"><code class="docutils literal notranslate"><span class="pre">PongGame</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#kivy_pong_demo.main.PongGame.on_touch_move"><code class="docutils literal notranslate"><span class="pre">PongGame.on_touch_move()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#kivy_pong_demo.main.PongPaddle"><code class="docutils literal notranslate"><span class="pre">PongPaddle</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#kivy_pong_demo.main.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PongDemo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Pong Demo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pong-demo">
+<span id="module-kivy_pong_demo"></span><span id="kivy-pong-demo-app"></span><h1>Pong Demo<a class="headerlink" href="#pong-demo" title="Link to this heading"></a></h1>
+<p>Kivy demo pong app.</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="kivy_pong_demo.get_pyinstaller_datas">
+<span class="sig-prename descclassname"><span class="pre">kivy_pong_demo.</span></span><span class="sig-name descname"><span class="pre">get_pyinstaller_datas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_pong_demo.get_pyinstaller_datas" title="Link to this definition"></a></dt>
+<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">datas</span></code> list required by PyInstaller to be able to package
+<a class="reference internal" href="#module-kivy_pong_demo" title="kivy_pong_demo"><code class="xref py py-mod docutils literal notranslate"><span class="pre">kivy_pong_demo</span></code></a> in a application.</p>
+</dd></dl>
+
+<section id="pong-demo-app">
+<span id="module-kivy_pong_demo.main"></span><h1>Pong Demo App<a class="headerlink" href="#pong-demo-app" title="Link to this heading"></a></h1>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_pong_demo.main.PongApp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_pong_demo.main.</span></span><span class="sig-name descname"><span class="pre">PongApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_pong_demo.main.PongApp" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.app.html#kivy.app.App" title="(in Kivy v2.2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">App</span></code></a></p>
+<p>The Pong app.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_pong_demo.main.PongApp.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_pong_demo.main.PongApp.build" title="Link to this definition"></a></dt>
+<dd><p>Initializes the application; it will be called only once.
+If this method returns a widget (tree), it will be used as the root
+widget and added to the window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None or a root <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="(in Kivy v2.2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></a> instance
+if no self.root exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_pong_demo.main.PongApp.clean_up">
+<span class="sig-name descname"><span class="pre">clean_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_pong_demo.main.PongApp.clean_up" title="Link to this definition"></a></dt>
+<dd><p>Closes resources when the app is done.</p>
+<p>Used in testing.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_pong_demo.main.PongBall">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_pong_demo.main.</span></span><span class="sig-name descname"><span class="pre">PongBall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_pong_demo.main.PongBall" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="(in Kivy v2.2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></a></p>
+<p>The pong ball the moves across the screen.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_pong_demo.main.PongGame">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_pong_demo.main.</span></span><span class="sig-name descname"><span class="pre">PongGame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_pong_demo.main.PongGame" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="(in Kivy v2.2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></a></p>
+<p>The pong game canvas.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_pong_demo.main.PongGame.on_touch_move">
+<span class="sig-name descname"><span class="pre">on_touch_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">touch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_pong_demo.main.PongGame.on_touch_move" title="Link to this definition"></a></dt>
+<dd><p>Receive a touch move event. The touch is in parent coordinates.</p>
+<p>See <code class="xref py py-meth docutils literal notranslate"><span class="pre">on_touch_down()</span></code> for more information.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_pong_demo.main.PongPaddle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_pong_demo.main.</span></span><span class="sig-name descname"><span class="pre">PongPaddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_pong_demo.main.PongPaddle" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="(in Kivy v2.2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></a></p>
+<p>The paddle on each side of the screen.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kivy_pong_demo.main.run">
+<span class="sig-prename descclassname"><span class="pre">kivy_pong_demo.main.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_pong_demo.main.run" title="Link to this definition"></a></dt>
+<dd><p>Runs the pong app.</p>
+</dd></dl>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Kivy devs.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
